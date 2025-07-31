@@ -241,6 +241,17 @@ form#search.focus{
     align-items: center;
     transition: all 300ms;
 }
+
+.categorybox{
+    position:absolute;
+    min-height:400px;
+    background-color:rgba(255,255,255,0.9);
+    border:1px solid #e3e3e3;
+    top:56px;
+    left:0;
+    z-index:100;
+    display:none;
+}
 .line{
     display: inline-block;
     width:20px;
@@ -284,9 +295,6 @@ form#search.focus{
     padding-bottom:10px;
     border:1px solid #ddd;
     display:none;
-}
-.nav-item:hover ul.lnb{
-    display:block;
 }
 .nav-item li{
     padding:5px 15px;
@@ -347,7 +355,6 @@ a.sns{
     border-radius:8px;
 }
 a.sns i{
-    margin-right:8px;
     font-size:20px;
 }
 a.kakao{
@@ -361,6 +368,17 @@ a.apple{
   background-color:#333;
   color:#fff;
 }
+
+/***************** SECTION BEST **************/
+.img-best-box{
+    display:block;
+    width:100%;
+    height:400px;
+    background-color:#ddd;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
 
 /** form input 디자인 **/
 .joinform li{

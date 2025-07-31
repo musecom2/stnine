@@ -1,3 +1,16 @@
+$(function(){
+   $('.nav-item').hover(function(){
+     $(this).find('ul.lnb').fadeToggle();
+   });
+
+   $('.category').hover(function(){
+      const w = $('.container').width();  //container의 가로크기를 읽어 옴
+      $('.categorybox').css('width', w+"px"); //categorybox의 가로 크기로 설정함.
+      $(this).find('.categorybox').fadeToggle();
+   });
+
+});
+
 let slideIndex = 1;
 showSlides(slideIndex);
 

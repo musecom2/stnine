@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <nav class="topnav">
+        <nav class="topnav animate__animated animate__fadeInDown">
            <div class="container">
                <div class="d-flex justify-content-between">
                     <ul class="navbar nav">
@@ -41,14 +41,14 @@
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 leftbox">
+                <div class="col-md-3 leftbox animate__animated animate__fadeInDown animate__delay-1s">
                     <a href="#" class="sns instagram"><i class="ri-instagram-line"></i></a>
                     <a href="#" class="sns kakao"><i class="ri-kakao-talk-line"></i></a>
                 </div>
-                <div class="col-md-6 centerbox text-center">
+                <div class="col-md-6 centerbox text-center animate__animated animate__fadeInDown animate__delay-1s">
                   <a href="#">stnine</a>
                 </div> 
-                <div class="col-md-3 rightbox">
+                <div class="col-md-3 rightbox animate__animated animate__fadeInDown animate__delay-1s">
                     <form name="form" id="search">
                         <input type="search" class="search" id="searchInput" placeholder="검색..." />
                     </form>
@@ -56,13 +56,15 @@
                 </div>
             </div>
         </div>
-        <nav class="navigation navbar-expand-lg">
+        <nav class="navigation navbar-expand-lg animate__animated animate__fadeInDown animate__delay-2s">
             <div class="container position-relative">
                <div class="category position-absolute">
                   <span class="line line-1"></span>
                   <span class="line line-2"></span>
                   <span class="line line-3"></span>
+                  <div class="categorybox"></div>
                </div> 
+               
                <ul class="navbar-nav main-nav my-2 justify-content-between">
                   <li class="nav-item active">
                       <a class="nav-link" href="#">BEST10%</a>
@@ -149,7 +151,7 @@
     </header>
 
     <!-- ############### HERO PAGE ################# -->
-    <section id="hero">
+    <section id="hero" class="animate__animated animate__fadeInDown animate__delay-3s">
        <div class="slide-container">
           <div class="mySlides fd">
              <img src="images/banner01.jpg" alt="banner01">
@@ -162,6 +164,38 @@
           </div>                    
        </div>   
     </section>
+    <!-- section best -->
+    <section class="container">
+        <h2 class="text-center mt-5 pt-5 pb-5">BEST ITEMS</h2>
+        <div class="row">
+            <div class="col-md-3 my-3">
+              <a href="#" class="img-best-box" style="background-image:url(images/001.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+              <a href="#" class="img-best-box" style="background-image:url(images/002.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+                <a href="#" class="img-best-box" style="background-image:url(images/003.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+                <a href="#" class="img-best-box" style="background-image:url(images/004.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+                <a href="#" class="img-best-box" style="background-image:url(images/005.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+                <a href="#" class="img-best-box" style="background-image:url(images/006.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+                <a href="#" class="img-best-box" style="background-image:url(images/007.jpg)"></a>
+            </div>
+            <div class="col-md-3 my-3">
+                <a href="#" class="img-best-box" style="background-image:url(images/008.jpg)"></a>
+            </div>
+        </div>
+    </section>
+
+
     <footer>
         
     </footer>
