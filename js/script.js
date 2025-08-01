@@ -9,6 +9,33 @@ $(function(){
       $(this).find('.categorybox').fadeToggle();
    });
 
+   $('.best-cart').mouseenter(function(){
+       $(this).find('i').removeClass('ri-shopping-bag-4-line').addClass('ri-shopping-bag-4-fill');
+   }).mouseleave(function(){
+       $(this).find('i').removeClass('ri-shopping-bag-4-fill').addClass('ri-shopping-bag-4-line');
+   });
+
+   $('.best-heart').mouseenter(function(){
+       $(this).find('i').removeClass('ri-heart-line').addClass('ri-heart-fill');
+   }).mouseleave(function(){
+       $(this).find('i').removeClass('ri-heart-fill').addClass('ri-heart-line');
+   });
+
+   $(window).on('scroll', function(){
+      const navigation = $('.navigation').offset().top;
+      if($(this).scrollTop() > 220){
+         $('.navigation').css({
+            position : 'fixed',
+            top: '45px',
+            width: '100%'
+         });
+      }else{
+         $('.navigation').css({
+            position: 'static'
+         })
+      }
+   });
+
 });
 
 let slideIndex = 1;

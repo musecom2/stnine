@@ -27,11 +27,6 @@ a::after{
    left:-5px;
    z-index:-1;
 }
-a:hover::after{
-   opacity:0.5;
-   top:0;
-   left:0;
-}
 
 select {
     appearance: none;
@@ -64,6 +59,8 @@ select {
 /************** TOPNAV *****************/
 .topnav{
     border-bottom:1px solid #e3e3e3;
+    background:#fff;
+    z-index:100;
 }
 .topnav .navbar{
     padding:0;
@@ -223,6 +220,11 @@ form#search.focus{
     border-top:1px solid #e3e3e3;
     border-bottom:1px solid #e3e3e3;
     display:flex;
+    background:#fff;
+    z-index:99;
+}
+.padding-50{
+    padding-top: 51px;
 }
 .main-nav{
     margin-left:120px;
@@ -371,14 +373,85 @@ a.apple{
 
 /***************** SECTION BEST **************/
 .img-best-box{
-    display:block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width:100%;
     height:400px;
-    background-color:#ddd;
-    background-repeat:no-repeat;
-    background-size: cover;
+    position:relative;
+    overflow:hidden;
+}
+.img-best-box img{
+    max-width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    transition:all 300ms;
+}
+.img-best-box:hover img{
+    transform: scale(1.05);
+    filter: brightness(70%);
 }
 
+.img-best-box:hover .pd-best-box{
+    display:block;
+}
+.img-best-box:hover .btn-box{
+    bottom: 30px;
+}
+.pd-best-box{
+    display:none;
+}
+.pd-color span{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+}
+.white{
+    border:1px solid #333;
+    background:#fff;
+}
+.green{
+    background:green;
+}
+.blue{
+    background:blue;
+}
+.black{
+    background:black;
+}
+
+.best-title{
+    font-size:14px;
+    font-weight:700;
+    color:#fff;
+}
+.pd-best-pay{
+    margin-top:8px;
+    font-size:14px;
+    color:#fff;
+}
+.sail{
+    font-size:16px;
+    font-weight:600;
+}
+.btn-box{
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    width:100%;
+    bottom:-30px;
+    transition: all 300ms;
+}
+.best-cart,.best-heart{
+    border:none;
+    outline:none;
+    border-radius:7px;
+    font-size:16px;
+    margin: 0 3px;
+}
 
 /** form input 디자인 **/
 .joinform li{
