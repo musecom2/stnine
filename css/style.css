@@ -531,3 +531,14 @@ input.sol:checked+span::after{
     top:1px;
     left:1px;
 }
+.slide-page{
+    width: calc(100% + 30px);
+}
+.slide-wrapper{
+    overflow:hidden;
+    position:relative;
+}
+.slide-wrapper-in{
+    width:300%;
+    display:flex;
+}

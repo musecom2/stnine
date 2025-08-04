@@ -36,7 +36,13 @@ $(function(){
       }
    });
 
-});
+    $(window).on('load', function(){
+        const pageHeight = $('.slide-page:first-child').outerHeight(true);
+        $('.slide-wrapper').css('height', pageHeight+"px");
+    })
+
+
+}); //jquery
 
 let slideIndex = 1;
 showSlides(slideIndex);
