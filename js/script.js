@@ -1,4 +1,5 @@
 $(function(){
+
    $('.nav-item').hover(function(){
      $(this).find('ul.lnb').fadeToggle();
    });
@@ -36,10 +37,52 @@ $(function(){
       }
    });
 
+  setInterval(bestSlide, 8000);
+
+   let wrapperWidth = 0;
+   let pgCount = 0;
+   const totalPage = 3;
+
+   //페이지버튼 생성
+   for(let i=0; i < totalPage; i++){
+      if(i==0){ 
+              $('#page').append(`<li data-index="${i}" class="active"></li>`);
+      }else{
+              $('#page').append(`<li data-index="${i}"></li>`);
+      }       
+   }
+
     $(window).on('load', function(){
         const pageHeight = $('.slide-page:first-child').outerHeight(true);
         $('.slide-wrapper').css('height', pageHeight+"px");
-    })
+        wrapperWidth = $(".slide-wrapper").width();
+
+     });
+  
+     function updatePage(){
+        $('#page li').removeClass('active')
+                     .eq(pgCount).addClass('active');
+     }
+
+     function bestSlide(){
+        pgCount++;
+        if(pgCount == totalPage){
+            pgCount = 0;
+        }
+        updatePage();
+   
+        $(".slide-wrapper-in").animate({
+            left: -wrapperWidth + "px"
+        }, 300, function(){
+            //1. 첫 번째 슬라이드 복제 후 뒤로 이동
+            const first = $('.slide-wrapper-in .slide-page').first();
+            first.clone().appendTo('.slide-wrapper-in')
+            first.remove();
+            $('.slide-wrapper-in').css('left', 0);
+        });
+
+     }
+
 
 
 }); //jquery
