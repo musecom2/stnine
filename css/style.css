@@ -426,6 +426,23 @@ a.apple{
 .black{
     background:black;
 }
+.beige{
+     border:1px solid #333;
+    background:beige;
+}
+.ivory{
+     border:1px solid #333;
+    background:ivory;
+}
+.pink{
+    background-color: pink;
+}
+.navy{
+    background-color: navy;
+}
+.skyblue{
+    background-color: skyblue;
+}
 
 .best-title{
     font-size:14px;

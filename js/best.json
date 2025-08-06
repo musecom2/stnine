@@ -1,0 +1,218 @@
+[
+    {
+        "title": "루즈핏 린넨 셔츠",
+        "color": ["beige", "ivory", "blue"],
+        "cost": "65,000",
+        "price": "49,000",
+        "sale": "24%",
+        "img": "images/001.jpg",
+        "alt": "루즈핏 린넨 셔츠"
+    },
+    {
+        "title": "플라워 패턴 쉬폰 블라우스",
+        "color": ["pink", "mint", "navy"],
+        "cost": "79,000",
+        "price": "69,000",
+        "sale": "13%",
+        "img": "images/002.jpg",
+        "alt": "플라워 패턴 쉬폰 블라우스"
+    },
+    {
+        "title": "단아한 레이스 블라우스",
+        "color": ["white", "black"],
+        "cost": "58,000",
+        "price": "49,000",
+        "sale": "16%",
+        "img": "images/003.jpg",
+        "alt": "단아한 레이스 블라우스"
+    },
+    {
+        "title": "하늘하늘한 주름 블라우스",
+        "color": ["yellow", "skyblue", "black"],
+        "cost": "49,000",
+        "price": "39,000",
+        "sale": "20%",
+        "img": "images/004.jpg",
+        "alt": "하늘하늘한 주름 블라우스"
+    },
+    {
+        "title": "스트라이프 오버핏 셔츠",
+        "color": ["blue", "black", "gray"],
+        "cost": "55,000",
+        "price": "45,000",
+        "sale": "18%",
+        "img": "images/005.jpg",
+        "alt": "스트라이프 오버핏 셔츠"
+    },
+    {
+        "title": "시스루 펀칭 블라우스",
+        "color": ["white", "beige"],
+        "cost": "62,000",
+        "price": "55,000",
+        "sale": "11%",
+        "img": "images/006.jpg",
+        "alt": "시스루 펀칭 블라우스"
+    },
+    {
+        "title": "V넥 랩 블라우스",
+        "color": ["wine", "black"],
+        "cost": "72,000",
+        "price": "65,000",
+        "sale": "10%",
+        "img": "images/007.jpg",
+        "alt": "V넥 랩 블라우스"
+    },
+    {
+        "title": "볼륨 소매 블라우스",
+        "color": ["ivory", "pink", "mint"],
+        "cost": "59,000",
+        "price": "49,000",
+        "sale": "17%",
+        "img": "images/008.jpg",
+        "alt": "볼륨 소매 블라우스"
+    },
+    {
+        "title": "체크 패턴 셔츠",
+        "color": ["red", "green"],
+        "cost": "53,000",
+        "price": "45,000",
+        "sale": "15%",
+        "img": "images/009.jpg",
+        "alt": "체크 패턴 셔츠"
+    },
+    {
+        "title": "러플 디테일 블라우스",
+        "color": ["black", "beige", "white"],
+        "cost": "68,000",
+        "price": "59,000",
+        "sale": "13%",
+        "img": "images/010.jpg",
+        "alt": "러플 디테일 블라우스"
+    },
+    {
+        "title": "리본 타이블라우스",
+        "color": ["white", "black", "navy"],
+        "cost": "60,000",
+        "price": "49,000",
+        "sale": "18%",
+        "img": "images/011.jpg",
+        "alt": "리본 타이블라우스"
+    },
+    {
+        "title": "새틴 실키 블라우스",
+        "color": ["gold", "silver", "black"],
+        "cost": "85,000",
+        "price": "75,000",
+        "sale": "12%",
+        "img": "images/012.jpg",
+        "alt": "새틴 실키 블라우스"
+    },
+    {
+        "title": "퍼프 소매 블라우스",
+        "color": ["white", "sky blue"],
+        "cost": "55,000",
+        "price": "45,000",
+        "sale": "18%",
+        "img": "images/013.jpg",
+        "alt": "퍼프 소매 블라우스"
+    },
+    {
+        "title": "셔링 디테일 블라우스",
+        "color": ["beige", "brown"],
+        "cost": "59,000",
+        "price": "49,000",
+        "sale": "17%",
+        "img": "images/014.jpg",
+        "alt": "셔링 디테일 블라우스"
+    },
+    {
+        "title": "카라 넥 블라우스",
+        "color": ["ivory", "black"],
+        "cost": "50,000",
+        "price": "40,000",
+        "sale": "20%",
+        "img": "images/015.jpg",
+        "alt": "카라 넥 블라우스"
+    },
+    {
+        "title": "프릴 장식 블라우스",
+        "color": ["pink", "white"],
+        "cost": "69,000",
+        "price": "59,000",
+        "sale": "14%",
+        "img": "images/016.jpg",
+        "alt": "프릴 장식 블라우스"
+    },
+    {
+        "title": "트위드 블라우스",
+        "color": ["black", "white", "pink"],
+        "cost": "95,000",
+        "price": "85,000",
+        "sale": "11%",
+        "img": "images/017.jpg",
+        "alt": "트위드 블라우스"
+    },
+    {
+        "title": "빈티지 패턴 블라우스",
+        "color": ["brown", "green"],
+        "cost": "75,000",
+        "price": "65,000",
+        "sale": "13%",
+        "img": "images/018.jpg",
+        "alt": "빈티지 패턴 블라우스"
+    },
+    {
+        "title": "펀칭 레이스 셔츠",
+        "color": ["white", "black"],
+        "cost": "65,000",
+        "price": "55,000",
+        "sale": "15%",
+        "img": "images/019.jpg",
+        "alt": "펀칭 레이스 셔츠"
+    },
+       {
+        "title": "퍼프 소매 블라우스",
+        "color": ["white", "sky blue"],
+        "cost": "55,000",
+        "price": "45,000",
+        "sale": "18%",
+        "img": "images/013.jpg",
+        "alt": "퍼프 소매 블라우스"
+    },
+    {
+        "title": "셔링 디테일 블라우스",
+        "color": ["beige", "brown"],
+        "cost": "59,000",
+        "price": "49,000",
+        "sale": "17%",
+        "img": "images/014.jpg",
+        "alt": "셔링 디테일 블라우스"
+    },
+    {
+        "title": "카라 넥 블라우스",
+        "color": ["ivory", "black"],
+        "cost": "50,000",
+        "price": "40,000",
+        "sale": "20%",
+        "img": "images/015.jpg",
+        "alt": "카라 넥 블라우스"
+    },
+    {
+        "title": "프릴 장식 블라우스",
+        "color": ["pink", "white"],
+        "cost": "69,000",
+        "price": "59,000",
+        "sale": "14%",
+        "img": "images/016.jpg",
+        "alt": "프릴 장식 블라우스"
+    },
+    {
+        "title": "트위드 블라우스",
+        "color": ["black", "white", "pink"],
+        "cost": "95,000",
+        "price": "85,000",
+        "sale": "11%",
+        "img": "images/017.jpg",
+        "alt": "트위드 블라우스"
+    }
+]
