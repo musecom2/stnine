@@ -48,5 +48,8 @@ fetch("./js/best.json")
       slidePage += `<div class="row slide-page">${colPage}</div>`;
    }
      document.querySelector(".slide-wrapper-in").innerHTML = slidePage;
+
+
+     
 })
 .catch(err=> console.error("🤢 데이터 로딩에 실패했습니다.", err));

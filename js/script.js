@@ -37,7 +37,7 @@ $(function(){
       }
    });
 
-  setInterval(bestSlide, 8000);
+  //setInterval(bestSlide, 8000);
 
    let wrapperWidth = 0;
    let pgCount = 0;
@@ -52,13 +52,7 @@ $(function(){
       }       
    }
 
-    $(window).on('load', function(){
-        const pageHeight = $('.slide-page:first-child').outerHeight(true);
-        $('.slide-wrapper').css('height', pageHeight+"px");
-        wrapperWidth = $(".slide-wrapper").width();
-
-     });
-  
+ 
      function updatePage(){
         $('#page li').removeClass('active')
                      .eq(pgCount).addClass('active');
@@ -80,10 +74,97 @@ $(function(){
             first.remove();
             $('.slide-wrapper-in').css('left', 0);
         });
-
      }
 
 
+    function preBestSlide(){
+        pgCount--;
+        if(pgCount < 0) {
+            pgCount = totalPage - 1;
+        }
+        updatePage();
+
+        const last = $('.slide-wrapper-in .slide-page').last();
+        last.clone().prependTo('.slide-wrapper-in');
+
+        //css 이용해서 왼쪽으로 미리 이동
+        $('.slide-wrapper-in').css('left', -wrapperWidth + "px");
+
+        //slide 애니메이션을 거꾸로 
+        $('.slide-wrapper-in').animate({
+            left: '0px',
+        }, 300, function(){
+
+        });
+    }
+
+     $("#prev").on("click", function(){
+        preBestSlide();
+     });
+
+     $("#next").on("click", function(){
+        bestSlide();
+     });
+
+
+fetch("./js/best.json")
+.then(res => res.json())
+.then(rs => {
+
+   let slidePage = "";
+   let colPage = "";
+   for(let i = 0; i < 3; i++) {
+      colPage = "";
+
+      for(let j =0; j < 8; j++) {
+         const index = i * 8 + j;
+         const data = rs[index];
+         
+         //색상처리
+         let colorHtml = "";
+         data.color.forEach(co => {
+            colorHtml += `<span class="${co}"></span>`;
+         });
+
+         //상품목록 만들기
+         colPage += `
+            <div class="col-md-3 my-3">
+                        <a href="#" class="img-best-box">
+                            <img src="${data.img}" alt="${data.alt}">
+                            <div class="pd-best-box text-center">
+                                <div class="pd-color">
+                                    ${colorHtml}
+                                </div>
+                                <div class="best-title">${data.title}</div>
+                                <div class="pd-best-pay">
+                                <del>${data.cost}원</del>
+                                <span class="sail">${data.sale}</span>
+                                <span class="money">${data.price}원</span>
+                                </div>
+                            </div>
+                            <div class="btn-box">
+                                    <button type="button" class="best-cart">
+                                        <i class="ri-shopping-bag-4-line"></i>
+                                    </button>
+                                    <button type="button" class="best-heart">
+                                        <i class="ri-heart-line"></i>
+                                    </button>
+                            </div>
+                        </a>
+                    </div>
+         `;
+      }
+      slidePage += `<div class="row slide-page">${colPage}</div>`;
+
+   }
+     document.querySelector(".slide-wrapper-in").innerHTML = slidePage;
+
+        const pageHeight = $('.slide-page:first-child').outerHeight(true);
+        $('.slide-wrapper').css('height', pageHeight+"px");
+        wrapperWidth = $(".slide-wrapper").width();
+     
+})
+.catch(err=> console.error("🤢 데이터 로딩에 실패했습니다.", err));
 
 }); //jquery
 
