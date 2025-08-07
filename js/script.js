@@ -37,7 +37,7 @@ $(function(){
       }
    });
 
-  //setInterval(bestSlide, 8000);
+  setInterval(bestSlide, 8000);
 
    let wrapperWidth = 0;
    let pgCount = 0;
@@ -70,7 +70,7 @@ $(function(){
         }, 300, function(){
             //1. 첫 번째 슬라이드 복제 후 뒤로 이동
             const first = $('.slide-wrapper-in .slide-page').first();
-            first.clone().appendTo('.slide-wrapper-in')
+            first.clone().appendTo('.slide-wrapper-in');
             first.remove();
             $('.slide-wrapper-in').css('left', 0);
         });
@@ -86,6 +86,7 @@ $(function(){
 
         const last = $('.slide-wrapper-in .slide-page').last();
         last.clone().prependTo('.slide-wrapper-in');
+        last.remove();
 
         //css 이용해서 왼쪽으로 미리 이동
         $('.slide-wrapper-in').css('left', -wrapperWidth + "px");
