@@ -660,3 +660,40 @@ a.mycard{
 a:hover .card-img .btn-box{
     opacity: 1;
 }
+
+footer{
+    border-top: 1px solid #dedede;
+    margin-top:100px;
+    padding-top:50px;
+    color:#999;
+    font-size:14px;
+}
+footer h1{
+    font-size:40px;
+    font-weight:900;
+    margin-bottom:40px;
+}
+footer h3{
+    font-size:20px;
+    font-weight:700;
+    color:#333;
+}
+footer p{
+    margin:0;
+    padding:0;
+    margin-bottom:10px;
+}
+.sns-footer{
+    display:flex;
+}
+.sns-footer a.sns{
+   width:35px;
+   height:35px;
+}
+.vlist{
+   padding:10px;
+}
+.copyright{
+    padding-top:10px;
+    padding-bottom:20px;
+}
