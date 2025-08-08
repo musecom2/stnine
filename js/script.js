@@ -167,6 +167,47 @@ fetch("./js/best.json")
 })
 .catch(err=> console.error("🤢 데이터 로딩에 실패했습니다.", err));
 
+fetch('./js/list.json')
+  .then(res => res.json())
+  .then(list => {
+      const htmlArr = list.map(data => {
+        //색상처리 
+        let colorHtml = data.color.map(co=>{
+            return `<span class="${co}"></span>`;
+        }).join("");
+        return `
+                <div class="col-md-3 col-12">
+                    <a href="#" class="mycard">
+                        <div class="card-img">
+                            <img class="card-img-top" src="${data.img}" alt="${data.alt}">
+                                <div class="btn-box">
+                                    <button type="button" class="best-cart">
+                                        <i class="ri-shopping-bag-4-line"></i>
+                                    </button>
+                                    <button type="button" class="best-heart">
+                                        <i class="ri-heart-line"></i>
+                                    </button>
+                                </div><!--/btn-box-->
+                        </div><!--/card-img-->
+                        <div class="card-body">                  
+                            <div class="pd-color">
+                            ${colorHtml}
+                            </div>
+                            <div class="list-title">${data.title}</div>
+                            <div class="pd-list-pay">
+                                <del>${data.cost}원</del>
+                                <span class="sail">${data.sale}</span>
+                                <span class="money">${data.price}원</span>          
+                            </div>
+                        </div><!--card-body-->    
+                    </a> 
+                </div>   <!--/col-->     
+        `;
+      });
+      document.getElementById("list-item").innerHTML = htmlArr.join("");
+  })
+  .catch(err => console.error("🤢 데이터 로딩에 실패했습니다.", err));
+
 }); //jquery
 
 let slideIndex = 1;

@@ -473,6 +473,9 @@ a.apple{
     font-size:16px;
     margin: 0 3px;
 }
+section h2{
+    text-transform: uppercase;
+}
 
 /** form input 디자인 **/
 .joinform li{
@@ -614,4 +617,46 @@ input.sol:checked+span::after{
 #page li.active, 
 #page li:hover{
     background-color:#333;
+}
+
+/**********************************************************
+************** ARRIVALS **********************************/
+a.mycard{
+    display:block;
+    margin-bottom:20px;
+}
+.card-img{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+.card-img::after{
+    content:"";
+    display:block;
+    padding-bottom: 120%;
+}
+.card-img img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition:all 300ms;
+}
+.card-img:hover img{
+    transform: scale(1.05);
+    filter: brightness(70%); 
+}
+.card-img .btn-box{
+    width: 35px;
+    height: 65px;
+    bottom:20px;
+    right:20px;
+    z-index:2;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transition:all 300ms;
+}
+a:hover .card-img .btn-box{
+    opacity: 1;
 }
