@@ -254,10 +254,78 @@ function openOptionModal(id, list){
             
            `;
            document.getElementById("optionTitle").innerHTML = `${ct.title} 상품 <small>옵션 선택</small>`;
-    })  
+            let incolor = ct.color.map(co=>{
+                 return `<label><input type="radio" class="color" name="color" value="${co}"><span class="${co}"></span></label>`;
+           }).join("");
+
+            let inSize = ct.size.map( sz => {
+                return `<option value="${sz}">${sz}</option>`;
+            }).join("");
+            
+            let price = ct.price.replace(",", "");
+
+            let inForm = `<input type="hidden" id="pdtitle" name="pdtitle" value="${ct.title}">
+                          <input type="hidden" id="pdprice" name="pdprice" value="${price}">
+            `;
+           $("#cartOption").prepend(inForm);
+           $('#cpdColor').html(incolor);
+           $("#cpdSize").append(inSize);
+           $(".thimg").html(`<img src="${ct.img}" alt="${ct.alt}">`);
+           
+        })  
     .catch(err => console.error("🤢 데이터 로딩에 실패했습니다.", err));
 
     $("#optionModal").modal('show');
+}
+
+$(document).on("click", "#upqut", function(){
+   let q = Number($("#optqut").val());
+   let price = Number($("#pdprice").val());
+   q++;
+   price = price * q;
+   const kprice = price.toLocaleString("ko-KR");
+   $("#optqut").val(q);
+   $("#result").html(`합계 : ${kprice} 원 <small>(${q}개)</small>`);
+});
+
+$(document).on("click", "#downqut", function(){
+let q = Number($("#optqut").val());
+let price = Number($("#pdprice").val());
+   q--;
+   if(q < 1) {
+      q = 1;
+   }
+   price = price * q;
+   const kprice = price.toLocaleString("ko-KR");
+   $("#optqut").val(q);
+   $("#result").html(`합계 : ${kprice} 원 <small>(${q}개)</small>`);
+});
+
+$(document).on('change','input[name="color"], select[name="size"]', allOption);
+
+function allOption(){
+    let color = $('input[name="color"]:checked').val();
+    let size = $('select[name="size"]').val();
+    // console.log("컬러" + color);
+    // console.log("사이즈" + size);
+    if(color && size ) {
+       const title = $("#pdtitle").val();
+       const price = Number($("#pdprice").val());
+       const quintity = Number($("#optqut").val());
+       const kprice = price.toLocaleString("ko-KR");
+       const rs = `${title} - (색상: ${color} - 사이즈: ${size}) : <strong>${kprice}원</strong>`;
+       
+       //최종가격 가격 x 수량
+       const rsprice = (price * quintity).toLocaleString("ko-KR");
+       $("#result").html(`합계 : ${rsprice} 원 <small>(${quintity}개)</small>`);
+
+       $('.setpd').html(rs);
+       $('.qyt').removeClass('d-none').addClass('d-flex');
+    }else{
+       $('.setpd').text("");
+       $('.qyt').removeClass('d-flex').addClass('d-none');
+    }
+
 }
 
 let slideIndex = 1;
