@@ -17,36 +17,66 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <script>
         $(function(){
-          $('.btn').click(function(){
-              const col = $(this).data("col");
-              $("#list").children().removeClass().addClass(col);
-          })
+
         })
     </script>
 </head>
 <body>
-
-    <div class="container">
-        <div class="btn-box">
-            <button data-col="col-md-6" class="btn btn-primary">두개</button>
-            <button data-col="col-md-4" class="btn btn-primary">세개</button>
-            <button data-col="col-md-3" class="btn btn-primary">네개</button>
-        </div>
-        <div class="row" id="list">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+<section>
+    <div id="sample01">
+        sample 01
+        <div id="sample02">
+            sample 02
+            <div id="sample03">
+                sample 03
+            </div>
         </div>
     </div>
+</section>  
+    <div id="sample01-1">
+        sample 01-1
+        <div id="sample02-1">
+            sample 02-1
+            <div id="sample03-1">
+                sample 03-1
+            </div>
+        </div>
+    </div> 
+   <style>
+      input[type=radio]{
+         display:none;
+      }
+      label span{
+        display:inline-block;
+        padding:5px 10px;
+        border:1px solid #ddd;
+        cursor:pointer;
+        margin:10px;
+        opacity: 0.4;
+      }
+      input[type=radio]:checked + span{
+        background:yellowgreen;
+        opacity: 1;
+      }
+   </style>
+    <label>
+        <input type="radio" name="a" value="a">
+        <span class="a">이곳선택</span>
+    </label>
+    <label>
+        <input type="radio" name="a" value="b">
+        <span class="b">이곳선택</span>
+    </label>
 
+    <script>
+        const samp3 = document.getElementById("sample03");
+ 
+        //id가 02인 가장 가까운 조상
+       console.log(samp3.closest("#sample02"));
+
+       //div면서 부모가 section
+       console.log(samp3.closest("section > div"));
+
+    </script>
   </body>
 </html>

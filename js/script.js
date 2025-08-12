@@ -144,7 +144,11 @@ fetch("./js/best.json")
                                 </div>
                             </div>
                             <div class="btn-box">
-                                    <button type="button" class="best-cart">
+                                    <button type="button" 
+                                            class="best-cart"   
+                                            data-id="${data.id}" 
+                                            data-list="best"
+                                    >
                                         <i class="ri-shopping-bag-4-line"></i>
                                     </button>
                                     <button type="button" class="best-heart">
@@ -181,7 +185,11 @@ fetch('./js/list.json')
                         <div class="card-img">
                             <img class="card-img-top" src="${data.img}" alt="${data.alt}">
                                 <div class="btn-box">
-                                    <button type="button" class="best-cart">
+                                    <button type="button" 
+                                            class="best-cart"
+                                            data-id="${data.id}" 
+                                            data-list="list"
+                                    >
                                         <i class="ri-shopping-bag-4-line"></i>
                                     </button>
                                     <button type="button" class="best-heart">
@@ -208,7 +216,49 @@ fetch('./js/list.json')
   })
   .catch(err => console.error("🤢 데이터 로딩에 실패했습니다.", err));
 
+ //옵션 모달 열기
+ $(document).on('click', '.best-cart', function(e){
+    e.preventDefault();
+    const id = $(this).data("id");
+    const list = $(this).data("list");
+    openOptionModal(id, list);
+ });
+
+ $(document).on('click', '.close', function(e){
+    e.preventDefault();
+    $(this).closest(".modal").modal('hide');
+ });
+
+
 }); //jquery
+
+function openOptionModal(id, list){
+    
+    //사이즈
+    
+    //color
+
+    let thislist = "";
+    if(list === "best"){
+       thislist = "./js/best.json";
+    }else{
+       thislist = "./js/list.json";
+    }
+
+    fetch(thislist)
+    .then(res => res.json())
+    .then(rs => {
+           const ct = rs.find( it => Number(it.id) === id);
+           if(!ct) throw new Error(`id=🤢 ${id} 번호에 맞는 상품을 찾을 수 없습니다.`);
+           let cartHtml = `
+            
+           `;
+           document.getElementById("optionTitle").innerHTML = `${ct.title} 상품 <small>옵션 선택</small>`;
+    })  
+    .catch(err => console.error("🤢 데이터 로딩에 실패했습니다.", err));
+
+    $("#optionModal").modal('show');
+}
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -245,4 +295,9 @@ function showSlides(n) {
         slides[i].style.display = "none";
     }
     slides[slideIndex-1].style.display = "block";
+}
+
+//cart 옵션 만들기
+function cartOption(id) {
+    
 }
