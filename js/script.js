@@ -130,7 +130,7 @@ fetch("./js/best.json")
          //상품목록 만들기
          colPage += `
             <div class="col-md-3 my-3">
-                        <a href="#" class="img-best-box">
+                        <a href="detail.html?id=${data.id}&mode=best" class="img-best-box">
                             <img src="${data.img}" alt="${data.alt}">
                             <div class="pd-best-box text-center">
                                 <div class="pd-color">
@@ -181,7 +181,7 @@ fetch('./js/list.json')
         }).join("");
         return `
                 <div class="col-md-3 col-12">
-                    <a href="#" class="mycard">
+                    <a href="detail.html?id=${data.id}&mode=list" class="mycard">
                         <div class="card-img">
                             <img class="card-img-top" src="${data.img}" alt="${data.alt}">
                                 <div class="btn-box">
@@ -228,7 +228,6 @@ fetch('./js/list.json')
     e.preventDefault();
     $(this).closest(".modal").modal('hide');
  });
-
 
 }); //jquery
 
@@ -365,7 +364,3 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
 }
 
-//cart 옵션 만들기
-function cartOption(id) {
-    
-}
