@@ -291,6 +291,17 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
-
+    <script>
+        $(function(){
+          $(document).on("click", "#btnAddCart", function(){
+             const $title = $("#pdtitle").val();
+             const $price = $("#pdprice").val();
+             const $color = $("input[name=color]:checked").val();
+             const $size = $("#cpdSize").val();
+             const $quantity = $("#optqut").val();
+             const $img = $(".thimg img").attr("src");
+           });
+        });
+    </script>
 </body>
 </html>
